@@ -1,0 +1,39 @@
+
+def get_help():
+    print(" - n -- nyt dokument \n - Å -- Åben dokument \n - Q -- Luk dokument")
+
+def create_document(navn):
+    print("Skriv [Enter] - save and exit")
+    f = open(navn, "w")
+    txt = input()
+    f.write(txt)
+
+def open_document(fil_navn):
+    f = open(fil_navn, "r")
+    print(f.read())
+
+def quit_program():
+    print("Vi ses")
+    quit()
+
+print ("Type: 'help' for more info")
+
+
+Command = input(": ")
+
+if Command == 'Å':
+    fil_navn = input("filnavn: ")
+    open_document(fil_navn)
+
+
+if Command == 'n':
+    navn = input("Hvad skal dokumentet hedde: ")
+    create_document(navn)
+
+if Command == 'help':
+    get_help()
+
+Command = input(": ")
+
+if Command == 'q':
+    quit_program()
